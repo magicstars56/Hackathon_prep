@@ -8,6 +8,7 @@ token = "c7fb839a2ebd320b392654eaa01cb22a"
 client = TwilioRestClient(account, token)
 
 j = json.loads(open('card.json').read())
+b = json.loads(open('bad.json').read())
 locked = True
 status = 'closed'
 while True:
@@ -17,8 +18,10 @@ while True:
 	card = card[:18]
 	card = filter(str.isdigit, card)
 	if card not in j:
-		print 'Get outta here!'
-		message = client.messages.create(to="+16309950526", from_="+13313056100",body= "id: " + card + " tried to use the lock")
+		if card not in b:
+			message = client.messages.create(to="+16309950526", from_="+13313056100",body= "id: " + card + " tried to use the lock")
+		else:
+			message = client.messages.create(to="+16309950526", from_="+13313056100",body= b[card] + " tried to use  the lock")
 	else:
 		if locked:
 			locked = False
@@ -26,5 +29,4 @@ while True:
 		else:
 			locked = True
 			status = 'closed'
-		print 'Access Granted'
 		message = client.messages.create(to="+16309950526", from_="+13313056100",body= j[card] + " " + status + "  the lock")
