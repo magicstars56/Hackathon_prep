@@ -13,6 +13,9 @@ Hopefully the next one will be Boilermake (fall 2014).
 2. Pi Security Camers
   Given that the sate of consumer level security cameras is so bad right now, I think creating a cheap and somewhat robust solution could be a good use of our time. This hack would require a raspberry pi (with wifi) and a cheap usb webcam. The main focus of this hack will be to process incoming images from the camera and detect motion when the camera is armed. It will be challenging to do this on a raspberry pi, given the constraints on processor power. We can then grow this to output a video stream online, and then if possible, also include apps for iOS and Android.
   
+3. Cellular Backend
+  Using a cellular network as a the backend of an app.
+
 More ideas to be added soon (hopefully)
 
 
