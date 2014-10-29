@@ -21,6 +21,12 @@ Take a jacket or something, wire it up with lots of EL wire in different colors,
 
 This idea is currently reserved for Wildhacks
 
+###L4D2 Virtual Reality System
+Platforms: Arduino, Intel Edison, Raspberry Pi, SourceMod (SourcePawn), Myo, Oculus Rift, Wii remotes, Wiigee-C++, flex sensors
+
+Take a Nerf gun, rewire its electronics, and connect it to a microcontroller for trigger/reload control. Dual Myos for accelerometer/gyroscope data to determine arm position, angle, and movement for gestures like melee shove, ADS (aim down sights), and throwing objects. Use flex sensors on left hand for additional precision - point to vocalize 'look!', reach out and grab to interact with items, etc. Possible ammo/health counter. Walking can be emulated with 2 Wiimotes strapped to legs, a dance pad, or some other method. Use keybinds to translate from gestures to inputs. Haptic feedback vest with 48 PWM-drivable vibration motors controlled via RPi and LED drivers for feedback when player gets hit, with RGB LED lighting for health visualization (ie. lower brightness as user takes damage, flash all red when player goes down, etc.) To retrieve game data like ammo/health/hit position, write a SourceMod plugin that listens to events and sends data to a client (in this case, the RPi) via sockets which will process the data. Aiming system still unknown, but you can strap a Wiimote to the gun barrel and use a sensor bar to position track the gun.
+
+Idea currently reserved for a 'big' hackathon (MHacks V), haptic feedback vest might be done separately and incorporated into the overall idea later
 
 #Implemented Ideas
 
